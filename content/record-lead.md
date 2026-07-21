@@ -1,0 +1,1 @@
+The same record the scorecard above cites from.

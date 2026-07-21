@@ -1,0 +1,1 @@
+Six claims, pulled straight from your JD's own experience profile and outcomes. Each one scored against the real record, with a citation, not a highlight reel.

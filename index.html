@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose Platero → Thomson Reuters · VP, Product Transformation</title>
+<meta name="description" content="Instead of a cover letter: an eval report. Every claim about fit is cited, checkable, and scored, the same discipline this role asks for, demonstrated instead of described.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  /* Brand tokens measured from thomsonreuters.com's live production CSS bundle
+     (clientlib-bayberry), not guessed. See design-notes.md for the scan. */
+  :root {
+    --orange:#d64000; --orange-dark:#ab3300; --orange-light:#fa6400; --orange-tint:#fdeee6;
+    --ink:#1f1f1f; --ink-70:#4a4a4a; --dim:#737373;
+    --bg:#fff; --paper:#f8eadd; --paper-2:#fbf6ee; --border:#e6e6e6; --neutral:#f2f2f2;
+    --success:#387c2b; --success-tint:#eaf5e6;
+    --alert:#dc0a0a; --alert-tint:#ffeded;
+    --blue:#0065ff; --blue-tint:#e6f0ff;
+    --r:4px; --r-lg:10px;
+    --ease:cubic-bezier(.4,0,.2,1); --spring:cubic-bezier(.3,1.3,.4,1);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+         color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; line-height:1.55; overflow-x:hidden; }
+  a { color:inherit; }
+  .disp { font-family:"Source Serif 4",Georgia,serif; }
+  .mono { font-family:"JetBrains Mono",ui-monospace,Menlo,monospace; }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- reveals ---------- */
+  .rv { opacity:0; transform:translateY(22px); }
+  .rv.in { opacity:1; transform:none; transition:opacity .7s var(--ease), transform .7s var(--ease); }
+  @media (prefers-reduced-motion:reduce){ .rv{opacity:1!important;transform:none!important} }
+
+  /* ---------- nav ---------- */
+  nav { padding:16px 0; position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92); backdrop-filter:blur(10px);
+        border-bottom:1px solid transparent; transition:border-color .3s; }
+  nav.scrolled { border-color:var(--border); }
+  nav .in2 { max-width:1040px; margin:0 auto; padding:0 28px; display:flex; justify-content:space-between; align-items:center; }
+  .logo { display:flex; align-items:center; gap:10px; }
+  .jmark path { stroke:var(--orange); }
+  .brand { font-family:"Source Serif 4",serif; font-weight:700; font-size:17px; letter-spacing:-.01em; }
+  .navbtns { display:flex; align-items:center; gap:10px; }
+  .pill { display:inline-flex; align-items:center; justify-content:center; background:var(--orange); color:#fff; font-weight:600; font-size:14.5px;
+          padding:12px 24px; border-radius:var(--r); text-decoration:none; border:1.5px solid var(--orange);
+          transition:transform .25s var(--spring), background .2s, box-shadow .25s; }
+  .pill:hover { background:var(--orange-dark); border-color:var(--orange-dark); box-shadow:0 10px 22px -12px rgba(214,64,0,.5); transform:translateY(-1px); }
+  .pill.ghost { background:transparent; color:var(--ink); border-color:var(--border); }
+  .pill.ghost:hover { border-color:var(--ink); background:var(--neutral); box-shadow:none; }
+  .pill.sm { padding:9px 18px; font-size:13.5px; }
+  @media (max-width:560px){ .brand{display:none} nav .in2{padding:0 18px} nav .pill.ghost{display:none} }
+
+  /* ---------- hero ---------- */
+  .hero { padding:64px 0 76px; background:linear-gradient(180deg, var(--paper), #fff 82%); }
+  .hero .grid { display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; }
+  @media (max-width:900px){ .hero .grid{ grid-template-columns:1fr; } }
+  .kick { display:inline-flex; align-items:center; gap:8px; background:var(--orange-tint); color:var(--orange-dark); font-weight:700;
+          font-size:12px; letter-spacing:.05em; text-transform:uppercase; padding:8px 14px; border-radius:var(--r); margin-bottom:26px; }
+  .kick .dot { width:7px; height:7px; border-radius:50%; background:var(--success); }
+  h1 { font-family:"Source Serif 4",serif; font-size:clamp(32px,4.6vw,50px); line-height:1.14; font-weight:700; letter-spacing:-.01em; margin-bottom:22px; }
+  h1 .accent { color:var(--orange); }
+  .dek { font-size:18px; color:var(--ink-70); max-width:52ch; margin-bottom:30px; }
+  .dek b { color:var(--ink); }
+  .heroctas { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px; }
+  .proofstrip { display:flex; flex-wrap:wrap; gap:14px; font-size:13.5px; color:var(--dim); }
+  .proofstrip b { color:var(--ink); font-weight:700; margin-right:4px; }
+  .proofstrip i { width:4px; height:4px; border-radius:50%; background:var(--border); align-self:center; }
+
+  /* eval report card, the hero's single focal object */
+  .report { background:#fff; border:1px solid var(--border); border-radius:var(--r-lg); box-shadow:0 30px 70px -36px rgba(31,31,31,.28);
+            overflow:hidden; }
+  .report-head { display:flex; justify-content:space-between; align-items:center; background:var(--ink); color:#fff; padding:13px 20px; }
+  .report-head .rid { font-size:12px; letter-spacing:.04em; }
+  .report-badge { display:inline-flex; align-items:center; gap:6px; background:var(--success); color:#fff; font-weight:700; font-size:11.5px;
+                  letter-spacing:.03em; padding:5px 11px; border-radius:var(--r); }
+  .report-body { padding:22px 22px 8px; }
+  .rrow { display:grid; grid-template-columns:22px 1fr auto; gap:12px; align-items:start; padding:12px 0; border-top:1px solid var(--border); font-size:13.5px; }
+  .rrow:first-child { border-top:none; }
+  .rchk { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:1px; }
+  .rchk.pass { background:var(--success); }
+  .rchk.adj { background:var(--blue); }
+  .rrow h4 { font-weight:600; font-size:13.5px; margin-bottom:2px; }
+  .rrow p { color:var(--dim); font-size:12.5px; }
+  .rstat { font-family:"JetBrains Mono",monospace; font-size:11.5px; color:var(--dim); white-space:nowrap; padding-top:2px; }
+  .report-foot { display:flex; justify-content:space-between; align-items:center; padding:14px 22px; background:var(--paper-2); border-top:1px solid var(--border); font-size:12.5px; }
+  .report-foot b { font-family:"JetBrains Mono",monospace; color:var(--success); }
+
+  /* ---------- sections ---------- */
+  section { padding:76px 0; }
+  section + section { border-top:1px solid var(--border); }
+  .eyebrow { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:12px; }
+  h2 { font-family:"Source Serif 4",serif; font-size:clamp(24px,3.2vw,34px); font-weight:700; letter-spacing:-.01em; margin-bottom:12px; }
+  .lead { color:var(--dim); font-size:16px; max-width:60ch; margin-bottom:36px; }
+  .lead b { color:var(--ink-70); }
+
+  /* ---------- demonstrated, not described ---------- */
+  .proofgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:820px){ .proofgrid{ grid-template-columns:1fr; } }
+  .proofcard { background:var(--paper-2); border:1px solid var(--border); border-radius:var(--r-lg); padding:24px 22px; }
+  .proofcard .n { font-family:"JetBrains Mono",monospace; font-size:32px; font-weight:700; color:var(--orange); line-height:1; margin-bottom:10px; }
+  .proofcard h4 { font-size:14.5px; font-weight:700; margin-bottom:6px; }
+  .proofcard p { font-size:13px; color:var(--dim); }
+  .repolink { display:inline-flex; align-items:center; gap:8px; margin-top:28px; background:var(--ink); color:#fff; font-family:"JetBrains Mono",monospace;
+              font-size:13px; padding:12px 18px; border-radius:var(--r); text-decoration:none; transition:background .2s, transform .25s var(--spring); }
+  .repolink:hover { background:#000; transform:translateY(-2px); }
+
+  /* ---------- eval scorecard (the honesty framework) ---------- */
+  .scorecard { border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; }
+  .srow { display:grid; grid-template-columns:120px 1fr; gap:22px; padding:22px 24px; align-items:start; background:#fff; transition:background .2s; }
+  .srow:hover { background:var(--paper-2); }
+  .srow + .srow { border-top:1px solid var(--border); }
+  @media (max-width:660px){ .srow{ grid-template-columns:1fr; gap:8px; } }
+  .stat-chip { display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:12px; letter-spacing:.03em; text-transform:uppercase;
+               padding:6px 12px; border-radius:var(--r); white-space:nowrap; height:fit-content; }
+  .stat-chip.pass { background:var(--success-tint); color:var(--success); }
+  .stat-chip.adj { background:var(--blue-tint); color:var(--blue); }
+  .stat-chip.gap { background:var(--alert-tint); color:var(--alert); }
+  .srow p { color:var(--ink-70); font-size:15px; }
+  .srow p b { color:var(--ink); }
+  .srow .cite { display:inline-block; margin-top:8px; font-family:"JetBrains Mono",monospace; font-size:11.5px; color:var(--dim); }
+
+  /* live eval run demo */
+  .runbar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+  .runbtn { display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff; font-weight:600; font-size:14px; border:none; cursor:pointer;
+            padding:12px 20px; border-radius:var(--r); transition:background .2s, transform .25s var(--spring); }
+  .runbtn:hover { background:#000; transform:translateY(-2px); }
+  .runbtn:disabled { opacity:.5; cursor:default; transform:none; }
+  .runsummary { font-family:"JetBrains Mono",monospace; font-size:13px; color:var(--dim); }
+  .runsummary b { color:var(--success); }
+  .rn-status { opacity:0; transition:opacity .3s; }
+  .rn-status.show { opacity:1; }
+  .rn-status .dotspin { display:inline-block; width:9px; height:9px; border-radius:50%; border:2px solid var(--border); border-top-color:var(--ink); animation:spin .7s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  @media (prefers-reduced-motion:reduce){ .rn-status .dotspin { animation:none; border-top-color:var(--border); } }
+
+  /* ---------- uplift proof ---------- */
+  .upliftgrid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media (max-width:760px){ .upliftgrid{ grid-template-columns:1fr; } }
+  .uplift { border:1px solid var(--border); border-radius:var(--r-lg); padding:22px 24px; }
+  .uplift .tag { display:inline-block; background:var(--orange-tint); color:var(--orange-dark); font-weight:700; font-size:11.5px;
+                 letter-spacing:.03em; text-transform:uppercase; padding:5px 11px; border-radius:var(--r); margin-bottom:12px; }
+  .uplift h4 { font-size:15.5px; font-weight:700; margin-bottom:6px; }
+  .uplift p { font-size:13.5px; color:var(--dim); }
+
+  /* ---------- record ---------- */
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; margin-bottom:8px; }
+  @media (max-width:760px){ .stats{ grid-template-columns:repeat(2,1fr); } }
+  .stat { background:#fff; padding:26px 22px; border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .stat:nth-child(2n){ border-right:none; }
+  @media (min-width:761px){ .stat:nth-child(4n){ border-right:none; } .stat:nth-child(n+5){ border-bottom:none; } }
+  @media (max-width:760px){ .stat:nth-last-child(-n+2){ border-bottom:none; } }
+  .stat b { display:block; font-family:"JetBrains Mono",monospace; font-size:clamp(28px,3.6vw,40px); font-weight:700; color:var(--orange); margin-bottom:8px; }
+  .stat span { display:block; font-size:12.5px; color:var(--dim); font-weight:600; }
+
+  /* ---------- letters ---------- */
+  .letters { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:760px){ .letters{ grid-template-columns:1fr; } }
+  .letter { background:var(--paper-2); border:1px solid var(--border); border-radius:var(--r-lg); padding:24px 24px; }
+  .letter blockquote { font-size:14.5px; line-height:1.6; color:var(--ink-70); }
+  .letter blockquote::before { content:"\201C"; display:block; font-family:"Source Serif 4",serif; font-size:34px; color:var(--orange); line-height:.6; margin-bottom:8px; }
+  .letter figcaption { margin-top:14px; font-size:12.5px; color:var(--dim); font-weight:600; }
+  .letter figcaption b { color:var(--ink); }
+
+  /* ---------- beyond this page ---------- */
+  .more { background:var(--ink); color:#fff; border-radius:var(--r-lg); padding:44px 40px; }
+  .more h2 { color:#fff; } .more .eyebrow { color:var(--orange-light); }
+  .more .lead { color:rgba(255,255,255,.65); }
+  .more .lead b { color:rgba(255,255,255,.9); }
+  .more .pill { background:#fff; color:var(--ink); border-color:#fff; }
+  .more .pill:hover { background:var(--paper); border-color:var(--paper); }
+
+  /* ---------- closing band ---------- */
+  .band { background:linear-gradient(135deg, var(--orange), var(--orange-dark)); color:#fff; border-radius:var(--r-lg); padding:56px 40px; text-align:center; }
+  .band h2 { color:#fff; margin:0 auto 14px; max-width:24ch; }
+  .band p { color:rgba(255,255,255,.9); font-size:16.5px; max-width:52ch; margin:0 auto 26px; }
+  .band .pill { background:#fff; color:var(--orange-dark); border-color:#fff; }
+  .band .pill:hover { background:var(--ink); color:#fff; border-color:var(--ink); }
+
+  .foot { text-align:center; padding:36px 0 12px; color:var(--dim); font-size:13px; }
+  .foot a { color:var(--orange); text-decoration:none; }
+  .disclaimer { text-align:center; padding:0 28px 44px; color:#a3a3a3; font-size:11.5px; max-width:58ch; margin:0 auto; }
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="in2">
+  <span class="logo" aria-label="Jose Platero">
+    <svg class="jmark" viewBox="0 0 40 40" width="30" height="30" role="img" aria-hidden="true">
+      <path d="M6 25 A14 14 0 0 1 34 25" fill="none" stroke-width="4.5" stroke-linecap="round"/>
+      <text x="20" y="34" text-anchor="middle" font-family="'Source Serif 4',serif" font-weight="700" font-size="20" fill="var(--ink)">J</text>
+    </svg>
+    <span class="brand">Jose Platero</span>
+  </span>
+  <span class="navbtns">
+    <a class="pill ghost sm" href="https://www.linkedin.com/in/joseplatero/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="pill sm" href="mailto:joseplatero@gmail.com?subject=Thomson Reuters: VP, Product Transformation">Start a conversation</a>
+  </span>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="kick rv"><span class="dot"></span>For Thomson Reuters &middot; VP, Product Transformation</span>
+      <h1>Show the path.<br><span class="accent">Already walked it.</span></h1>
+      <p class="dek rv">This page and its repo are the demo, not a description: <b>Claude Code, wired to GitHub</b>, an agent-built page shipped with its own automated eval suite. Below, every claim about fit against your JD is scored the same way your team is asked to score AI output: pass, adjacent, or disclosed gap. Not asserted.</p>
+      <div class="heroctas rv">
+        <a class="pill" href="#eval">See the eval run</a>
+        <a class="pill ghost" href="#scorecard">Read the scorecard</a>
+      </div>
+      <div class="proofstrip rv">
+        <span><b>45+</b> person org</span><i></i>
+        <span><b>9M+</b> members</span><i></i>
+        <span><b>2&times;</b> membership growth</span><i></i>
+        <span><b>Webby</b> Honoree</span>
+      </div>
+    </div>
+    <div class="report rv" aria-hidden="true">
+      <div class="report-head">
+        <span class="rid mono">EVAL RUN &middot; jose-platero &middot; #001</span>
+        <span class="report-badge">PASSING</span>
+      </div>
+      <div class="report-body">
+        <div class="rrow">
+          <span class="rchk pass">&#10003;</span>
+          <div><h4>Hands-on with the modern AI stack</h4><p>Claude Code + GitHub, shipped in public</p></div>
+          <span class="rstat mono">cite #1</span>
+        </div>
+        <div class="rrow">
+          <span class="rchk pass">&#10003;</span>
+          <div><h4>Led org transformation at scale</h4><p>45+ people, existing org, not greenfield</p></div>
+          <span class="rstat mono">cite #2</span>
+        </div>
+        <div class="rrow">
+          <span class="rchk pass">&#10003;</span>
+          <div><h4>Public technical thought leadership</h4><p>Keynotes, workshops, an instructor role</p></div>
+          <span class="rstat mono">cite #3</span>
+        </div>
+        <div class="rrow">
+          <span class="rchk adj">~</span>
+          <div><h4>AI-native product experience</h4><p>Internal agentic tooling, production use</p></div>
+          <span class="rstat mono">cite #4</span>
+        </div>
+      </div>
+      <div class="report-foot">
+        <span>6 checks run</span>
+        <span><b>4 pass</b> &middot; 1 adjacent &middot; 1 disclosed</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="eval">
+  <div class="wrap">
+    <div class="eyebrow rv">Demonstrated, not described</div>
+    <h2 class="rv">The stack you listed. Already running.</h2>
+    <p class="lead rv">Your JD asks for someone who sets up the modern AI dev stack themselves and shows the path instead of describing it. Here is the actual repo, public, with a real commit history and a real automated eval suite gating every change.</p>
+    <div class="proofgrid rv">
+      <div class="proofcard">
+        <div class="n" id="pc-commits">&mdash;</div>
+        <h4>Shipped via Claude Code + GitHub</h4>
+        <p>Every change in this repo went through the same agentic workflow the JD describes: prompted, built, committed, pushed.</p>
+      </div>
+      <div class="proofcard">
+        <div class="n" id="pc-checks">&mdash;</div>
+        <h4>Automated checks gate every commit</h4>
+        <p>A zero-dependency eval suite: document integrity, accessibility, brand rules, and a live parity check against the deployed page.</p>
+      </div>
+      <div class="proofcard">
+        <div class="n">Same day</div>
+        <h4>JD to live demo</h4>
+        <p>Read the posting, built the case, shipped a tested, deployed page. The cycle-time reduction your Year One outcomes ask for, demonstrated on this application.</p>
+      </div>
+    </div>
+    <a class="repolink rv" href="https://github.com/thejoseplatero/thomsonreuters" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      github.com/thejoseplatero/thomsonreuters
+    </a>
+  </div>
+</section>
+
+<section id="scorecard">
+  <div class="wrap">
+    <div class="eyebrow rv">The eval scorecard</div>
+    <h2 class="rv">A golden dataset, run against the JD.</h2>
+    <p class="lead rv">Six claims, pulled straight from your JD's own experience profile and outcomes. Each one scored against the real record, with a citation, not a highlight reel.</p>
+    <div class="runbar rv">
+      <button class="runbtn" id="runbtn">Run the eval suite</button>
+      <span class="runsummary" id="runsummary"></span>
+    </div>
+    <div class="scorecard rv" id="scorecard-body">
+      <div class="srow">
+        <span class="stat-chip pass">Pass</span>
+        <div>
+          <p><b>Led transformation at scale, on an existing org, not a greenfield build.</b> Scaled a 45+ person group across four practices, hired and developed a new manager layer, and cut the time to get a new team to its operating baseline from a quarter to days. Delivered a full status-program relaunch end to end, migrating 9M+ members, on an 89-year-old airline that had never done it this way before.</p>
+          <span class="cite">cite: the record, below</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span class="stat-chip pass">Pass</span>
+        <div>
+          <p><b>Hands-on with the modern AI stack, not delegated.</b> Claude Code wired to GitHub, agentic build workflows, a real eval suite gating every commit. This page and its repo are the proof, not a claim about a proof.</p>
+          <span class="cite">cite: the repo, above</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span class="stat-chip pass">Pass</span>
+        <div>
+          <p><b>Cross-functional executive influence without formal authority.</b> Business champion for an 18-month redesign of the digital product operating model, from funding through ways of working, run in partnership with a global technology consultancy. Sits on the enterprise transformation council redesigning the end-to-end marketing value stream, in partnership with a global strategy consultancy. Both required moving CTO, CPO, and segment-leader stakeholders who reported to no one on my team.</p>
+          <span class="cite">cite: executive highlights, CV on request</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span class="stat-chip pass">Pass</span>
+        <div>
+          <p><b>Public technical thought leadership.</b> Keynote speaker on AI for builders and executives (AIAI Toronto), speaker on the AI-native product workflow (AI Product Summit Toronto), and an active BrainStation instructor for the AI Product Management Certification and AI Agents workshops. Teaching the exact uplift this role asks for, already, to people who aren't my own team.</p>
+          <span class="cite">cite: capability uplift, below</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span class="stat-chip adj">Adjacent</span>
+        <div>
+          <p><b>AI-native product experience, internal not customer-facing.</b> I built and run the operating model where agents draft PRDs and user stories, prep executive reporting, audit initiatives, and plan capacity, in daily production use across my team. That's real agentic engineering, shipped and operated, not prototyped and shelved. It's an internal operating system, though, not a customer-facing AI product like the ones your JD's preferred companies ship. The discipline transfers; the audience was different.</p>
+          <span class="cite">cite: the repo, above; joseplatero.com</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span class="stat-chip gap">Disclosed</span>
+        <div>
+          <p><b>Org scale and company pedigree don't match your preference exactly.</b> Your JD prefers someone from a 200+ PM organization at a specifically AI-native company. Mine is 45+ people across product, design, martech, and adtech, at a 89-year-old airline, not a 200+ PM-only org, and not on your named list. I also haven't done the founder or early-employee stage of an AI-native company that scaled. What I have done is pull an existing, non-AI-native organization through exactly the transformation you're describing, at meaningfully smaller scale. If that scale gap is disqualifying on day one, better to know now than in month two.</p>
+          <span class="cite">cite: none. this one's just true</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Capability uplift, already run once</div>
+    <h2 class="rv">The uplift curriculum, taught before.</h2>
+    <p class="lead rv">Your Year One outcomes ask for AI fluency and agentic design uplift across 400+ PMs. I've already run versions of this curriculum, live, for people outside my own reporting line.</p>
+    <div class="upliftgrid rv">
+      <div class="uplift">
+        <span class="tag">Instructor, BrainStation</span>
+        <h4>AI Product Management Certification</h4>
+        <p>Plus workshops in AI Agents, AI for Designers, and rapid prototyping with Figma Make. Curriculum, not a one-off talk.</p>
+      </div>
+      <div class="uplift">
+        <span class="tag">Keynote, AIAI Toronto</span>
+        <h4>AI for Builders and Executives</h4>
+        <p>Speaking to both audiences at once is the same muscle this role needs: sell the future to executives, then pair with the engineer who ships it.</p>
+      </div>
+      <div class="uplift">
+        <span class="tag">Speaker, AI Product Summit Toronto</span>
+        <h4>Inside the AI-Native Product Workflow</h4>
+        <p>The exact demo this page is built from: agentic PRDs, executive reporting, and capacity planning, shown to a room, not just my team.</p>
+      </div>
+      <div class="uplift">
+        <span class="tag">Advisor, Smith School of Business, Queen's University</span>
+        <h4>Master of Digital Product Management</h4>
+        <p>Mentoring the next cohort of product leaders before they're on payroll anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">The record</div>
+    <h2 class="rv">Numbers you can check.</h2>
+    <p class="lead rv" style="margin-bottom:24px;">The same record the scorecard above cites from.</p>
+    <div class="stats rv">
+      <div class="stat"><b>45+</b><span>person org: product, design, martech, adtech</span></div>
+      <div class="stat"><b>9M+</b><span>members on the programs I run</span></div>
+      <div class="stat"><b>2&times;</b><span>active membership after the loyalty relaunch</span></div>
+      <div class="stat"><b>0</b><span>strategy decks produced. The agents write the report</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">What people say after</div>
+    <h2 class="rv">The agentic workflow, in someone else's words.</h2>
+    <div class="letters rv">
+      <figure class="letter">
+        <blockquote>This came from chatting with Jose Platero who demo'd his workflow of connecting Jira with Claude via MCP to generate an executive insight report as a skill. I wanted to automate the workflow entirely so it did not have to be prompted and would run without me present.</blockquote>
+        <figcaption><b>Sarah Yeung</b> &middot; Systems &amp; Operations PM, after the AI Product Summit. She then shipped her own weekly digest.</figcaption>
+      </figure>
+      <figure class="letter">
+        <blockquote>One idea I'm particularly excited to explore came from Jose Platero's session on MCP integrations. The possibility of connecting tools like Jira to create executive-friendly reporting is a practical use case that I can see bringing real value within organizations.</blockquote>
+        <figcaption><b>Nauka Chokshi</b> &middot; Product Manager, 6+ yrs UX research, after the AI Summit.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:none; padding-top:0;">
+  <div class="wrap">
+    <div class="more rv">
+      <div class="eyebrow">Beyond this page</div>
+      <h2>This page is one eval. joseplatero.com is the full suite.</h2>
+      <p class="lead">Everything above is one scored run. <b>joseplatero.com is where the operating system lives:</b> demos of the same agentic workflow this page came out of, the origin story, and what people write after the talks, unedited.</p>
+      <a class="pill" href="https://joseplatero.com/" target="_blank" rel="noopener">Watch the agents work</a>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:none; padding-top:0;">
+  <div class="wrap">
+    <div class="band rv">
+      <h2 class="disp">Ready to show the rest of the path.</h2>
+      <p>Twenty-five minutes on how I'd run the first ninety days: what ships week one, what the eval framework looks like for a 400+ PM org, and where the disclosed gap stops mattering. No prep required on your side.</p>
+      <a class="pill" href="mailto:joseplatero@gmail.com?subject=Thomson Reuters: VP, Product Transformation">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <a href="https://www.linkedin.com/in/joseplatero/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://joseplatero.com/" target="_blank" rel="noopener">joseplatero.com</a> &middot; <a href="https://github.com/thejoseplatero/thomsonreuters" target="_blank" rel="noopener">Repo</a>
+</div>
+<div class="disclaimer">Not affiliated with or endorsed by Thomson Reuters. A personal, unsolicited pitch for one specific application, built in Thomson Reuters' visual style as a gesture of care, not a claim of association. The eval report above is illustrative.</div>
+
+<script>
+'use strict';
+const reduced = matchMedia('(prefers-reduced-motion:reduce)').matches;
+const reveal = el => el.classList.add('in');
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target);} }),{threshold:.1});
+document.querySelectorAll('.rv, h1').forEach(el=>io.observe(el));
+function sweep(){ document.querySelectorAll('.rv:not(.in), h1:not(.in)').forEach(el=>{ if(el.getBoundingClientRect().top < innerHeight*.96) reveal(el); }); }
+addEventListener('scroll', sweep, {passive:true}); addEventListener('load', sweep); setTimeout(sweep, 350);
+
+addEventListener('scroll', ()=>{ document.getElementById('nav').classList.toggle('scrolled', scrollY > 12); }, {passive:true});
+
+/* live eval run: animate the scorecard rows from pending to verdict, like a CI run */
+const runbtn = document.getElementById('runbtn');
+const summary = document.getElementById('runsummary');
+const rows = [...document.querySelectorAll('.srow')];
+let ran = false;
+function runSuite(){
+  if (ran) { runbtn.disabled = false; }
+  ran = true;
+  runbtn.disabled = true;
+  summary.textContent = '';
+  rows.forEach(r => { const chip = r.querySelector('.stat-chip'); chip.dataset.final = chip.dataset.final || chip.textContent.trim();
+    chip.textContent = ''; chip.classList.add('running'); });
+  const chips = rows.map(r => r.querySelector('.stat-chip'));
+  let i = 0;
+  const step = () => {
+    if (i > 0) {
+      const prev = chips[i-1];
+      prev.classList.remove('running');
+      prev.textContent = prev.dataset.final;
+    }
+    if (i < chips.length) {
+      chips[i].innerHTML = '<span class="dotspin"></span>';
+      i++;
+      setTimeout(step, reduced ? 0 : 420);
+    } else {
+      const pass = chips.filter(c => c.dataset.final === 'Pass').length;
+      const adj = chips.filter(c => c.dataset.final === 'Adjacent').length;
+      const gap = chips.filter(c => c.dataset.final === 'Disclosed').length;
+      summary.innerHTML = chips.length + ' checks run &middot; <b>' + pass + ' pass</b> &middot; ' + adj + ' adjacent &middot; ' + gap + ' disclosed';
+      runbtn.disabled = false;
+      runbtn.textContent = 'Run again';
+    }
+  };
+  step();
+}
+runbtn.addEventListener('click', runSuite);
+const sio = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting && !ran){ runSuite(); sio.disconnect(); } }),{threshold:.4});
+sio.observe(document.getElementById('scorecard-body'));
+</script>
+</body>
+</html>

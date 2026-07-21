@@ -1,0 +1,1 @@
+Everything above is one scored run. <b>joseplatero.com is where the operating system lives:</b> demos of the same agentic workflow this page came out of, the origin story, and what people write after the talks, unedited.

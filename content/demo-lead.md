@@ -1,0 +1,1 @@
+Your JD asks for someone who sets up the modern AI dev stack themselves and shows the path instead of describing it. Here is the actual repo, public, with a real commit history and a real automated eval suite gating every change.

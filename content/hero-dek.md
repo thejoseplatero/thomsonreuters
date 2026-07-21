@@ -1,0 +1,1 @@
+This page and its repo are the demo, not a description: <b>Claude Code, wired to GitHub</b>, an agent-built page shipped with its own automated eval suite. Below, every claim about fit against your JD is scored the same way your team is asked to score AI output: pass, adjacent, or disclosed gap. Not asserted.

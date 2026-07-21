@@ -1,0 +1,1 @@
+Twenty-five minutes on how I'd run the first ninety days: what ships week one, what the eval framework looks like for a 400+ PM org, and where the disclosed gap stops mattering. No prep required on your side.

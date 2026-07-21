@@ -1,0 +1,1 @@
+Your Year One outcomes ask for AI fluency and agentic design uplift across 400+ PMs. I've already run versions of this curriculum, live, for people outside my own reporting line.

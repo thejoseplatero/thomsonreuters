@@ -1,0 +1,1 @@
+Show the path.<br><span class="accent">Already walked it.</span>
